@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>danneu's blog</title>
+    <link href="/syntax-highlighter/shCoreRDark.css" type="text/css" rel="stylesheet">
+    <link href="/syntax-highlighter/shThemeRDark.css" type="text/css" rel="stylesheet">
+    <link href="/css/base.css" type="text/css" rel="stylesheet">
+    <link href="/css/layout.css" type="text/css" rel="stylesheet">
+    <link href="/css/skeleton.css" type="text/css" rel="stylesheet">
+    <link href="/css/style.css" type="text/css" rel="stylesheet">
+    <link href="/css/pygments.css" type="text/css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="header">
+        <a href="/" class="logo">
+          <div class="back">&larr;</div>
+          <h1>danneu</h1>
+        </a>
+        &mdash; 
+        <ul>
+          <li><a href="/about-me/"> about me</a></li>
+        </ul>
+      </div>
+
+    {{&yield}}
+    </div>
+
+    <script src="/syntax-highlighter/shCore.js"></script>
+    <script src="/syntax-highlighter/brushes/shBrushBash.js"></script>
+    <script src="/syntax-highlighter/brushes/shBrushCss.js"></script>
+    <script src="/syntax-highlighter/brushes/shBrushJava.js"></script>
+    <script src="/syntax-highlighter/brushes/shBrushJScript.js"></script>
+    <script src="/syntax-highlighter/brushes/shBrushPlain.js"></script>
+    <script src="/syntax-highlighter/brushes/shBrushPython.js"></script>
+    <script src="/syntax-highlighter/brushes/shBrushRuby.js"></script>
+    <script src="/syntax-highlighter/brushes/shBrushSql.js"></script>
+    <script src="/syntax-highlighter/brushes/shBrushXml.js"></script>
+    <script>
+      SyntaxHighlighter.defaults['gutter'] = true;
+      SyntaxHighlighter.defaults['toolbar'] = false;
+      SyntaxHighlighter.all();
+    </script>
+
+  </body>
+</html>

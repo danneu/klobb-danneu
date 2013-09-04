@@ -1,0 +1,14 @@
+{:layout "default"}
+
+<div class="posts">
+  {{#posts}}
+    <div class="row">
+      <div class="thirteen columns alpha">
+        <a href="/posts/{{slug}}/">{{title}}</a>
+      </div>
+      <div class="three columns omega">
+        {{created-at}}
+      </div>
+    </div>
+  {{/posts}}
+</div>

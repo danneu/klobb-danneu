@@ -1,0 +1,39 @@
+{:layout "default"}
+
+<h1>{{title}}</h1>
+
+<div class="post-meta row">
+  <div class="eight columns alpha post-author">
+    by <a href="/about-me/">Dan</a>
+  </div>
+  <div class="eight columns omega post-date">
+    {{published-at}}
+  </div>
+</div>
+
+<div class="post-content">
+  {{&yield}}
+</div>
+
+<hr>
+
+<h1>Comments</h1>
+<div id="disqus_thread">
+  <script>
+    var disqus_shortname = "danneu",
+        disqus_identifier = "{{disqus-id}}",
+        disqus_title = "{{title}}",
+        disqus_url = "http://danneu.com/posts/{{permalink}}",
+        disqus_developer = 0;
+
+  (function() {
+   var dsq = document.createElement('script');
+   dsq.type = 'text/javascript',
+   dsq.async = true,
+   dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+   (document.getElementsByTagName('head')[0] || 
+    document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+</div>
