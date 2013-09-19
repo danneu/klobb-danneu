@@ -20,8 +20,6 @@ The idea behind this post is:
 
 Hopefully that makes enough sense so that you can arrive at your own implementation since this post is out of date.
 
-----
-
 **OUTDATED**: *You can see this blog's sitemap at [danneu.com/sitemap.xml](http://danneu.com/sitemap.xml). Any time a post is created, it updates the sitemap.*
 
 Some tools I use include page caching, a sweeper, an observer, a custom
