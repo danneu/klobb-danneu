@@ -20,11 +20,15 @@
 <h1>Comments</h1>
 <div id="disqus_thread">
   <script>
-    var disqus_shortname = "danneu",
+    function determineShortname() {
+      var hostname = window.location.hostname;
+      return hostname.indexOf("danneu.com") > -1 ? "danneu" : "danneu-dev";
+    }
+
+    var disqus_shortname = determineShortname(),
         disqus_identifier = "{{disqus-id}}",
         disqus_title = "{{title}}",
-        disqus_url = "http://danneu.com/posts/{{slug}}/",
-        disqus_developer = 0;
+        disqus_url = "http://danneu.com/posts/{{slug}}/"
 
   (function() {
    var dsq = document.createElement('script');
