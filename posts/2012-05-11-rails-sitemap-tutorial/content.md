@@ -1,8 +1,28 @@
 {:title "Generating and submitting a sitemap.xml with Rails"
  :slug "13-generating-and-submitting-a-sitemap-xml-with-rails"
  :disqus-id "/posts/sitemap-with-rails-tutorial"}
+ 
+**UPDATE, 19 Sept 2013**:
 
-You can see this blog's sitemap at [danneu.com/sitemap.xml](http://danneu.com/sitemap.xml). Any time a post is created, it updates the sitemap.
+As of now this post is 16 months old and I haven't really been keeping up with Rails since I now work with other technologies.
+
+This post demonstrates Page Caching which has been since removed from Rails 4.0 and extracted into a gem: [actionpack-page_caching](https://github.com/rails/actionpack-page_caching)
+
+Some people have emailed me asking for help since this post doesn't work anymore if you follow it step by step, but it's just been too long since I've used Rails.
+
+I will keep this post here, but just know that it was written for Rails 3.x in May 2012.
+
+The idea behind this post is:
+
+- Create an endpoint `mywebsite.com/sitemap.xml` that loops through, say, all the Products in your database and builds a sitemap XML file that contains all the URLs for your site's Product pages.
+- However, since you don't want to have to generate the XML each time the `/sitemap.xml` URL is visited, you want to cache it. (this post demonstrates Rails 3.x Page Caching)
+- Whenever a Product is added or deleted (i.e. the list of Product URLs of your website is changed), then you want to invalidate the cache (which is what I used the Observer for). Or, alternatively, you may just want to cache the XML for a set amount of time.
+
+Hopefully that makes enough sense so that you can arrive at your own implementation since this post is out of date.
+
+----
+
+**OUTDATED**: *You can see this blog's sitemap at [danneu.com/sitemap.xml](http://danneu.com/sitemap.xml). Any time a post is created, it updates the sitemap.*
 
 Some tools I use include page caching, a sweeper, an observer, a custom
 logger, and an xml builder. (My expensive SEO consultant says I gotta get that
