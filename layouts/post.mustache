@@ -25,10 +25,19 @@
       return hostname.indexOf("danneu.com") > -1 ? "danneu" : "danneu-dev";
     }
 
+    function generateDisqusURL(slug) {
+      var postsURL = "http://www.danneu.com/posts";
+      if (slug[0] === "/") {
+        return postsURL + slug + "/";
+      } else { 
+        return postsURL + "/" + slug + "/";
+      }
+    }
+
     var disqus_shortname = determineShortname(),
         disqus_identifier = "{{disqus-id}}",
         disqus_title = "{{title}}",
-        disqus_url = "http://danneu.com/posts/{{slug}}/";
+        disqus_url = generateDisqusURL("{{slug}}");
 
   (function() {
    var dsq = document.createElement('script');
