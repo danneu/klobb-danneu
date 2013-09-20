@@ -714,3 +714,5 @@ My next step is to import OpenLibrary's 8gb book dump and match it up with the a
 
 - [day-of-datomic](https://github.com/Datomic/day-of-datomic) is a great Github repo with all sorts of Datomic examples that you can evaluate one line at a time in the repl. It's what got me started with Datomic.
 - Datomic's [MusicBrainz sample database](http://blog.datomic.com/2013/07/datomic-musicbrainz-sample-database.html) demonstrates how to recreate most of MusicBrainz' relational database with Datomic.
+- [Learn Datalog Today](http://www.learndatalogtoday.org/) provides an introduction to Datalog with in-browser tutorials.
+- [Datomic: up and running](https://www.youtube.com/watch?v=ao7xEwCjrWQ) (Video): A screencast of someone creating an owners-have-many-pets tutorial app. A much better intro than my blog post. It even demonstrates a TDD workflow using the Expectations library.
