@@ -2,6 +2,8 @@
  :slug "6-meteor-tutorial-for-fellow-noobs-adding-features-to-the-leaderboard-demo"
  :disqus-id "/posts/meteor-tutorial-leaderboard-demo"}
 
+(**Note**: Due to a problem with my post-renderer, I have to add a "\" character to escape bracketed variables like {{message}\} when they appear in code. )
+
 [Meteor](http://www.meteor.com/) is a javascript framework that just launched. Its screencasts demonstrate effortless real-time applications and I don't possess the technical understanding to explain it more technically that using adjectives like "real-time". But it's X-treme and the allure of it being so new and so instantly popular encouraged me to give it a go.
 
 The [Hacker News submission](http://news.ycombinator.com/item?id=3824908) announcing its launch has over 1,100 votes at the moment.
@@ -51,7 +53,7 @@ I'll add a line to the `leaderboard` template to nest it at the bottom of the pa
 <!-- leaderboard.html -->
 <template name="leaderboard">
   ...
-  {{> new_player }} 
+  {{> new_player }\}
 </template>
 ```
 
@@ -123,10 +125,10 @@ To make the button, I added one line to the `player` template that's looped to c
 ```html
 <!-- leaderboard.html -->
 <template name="player">
-  <div class="player {{selected}}">
+  <div class="player {{selected}\}">
     <input type="button" value="X" class="delete" /> <!-- here it is -->
-    <span class="name">{{name}}</span>
-    <span class="score">{{score}}</span>
+    <span class="name">{{name}\}</span>
+    <span class="score">{{score}\}</span>
   </div>
 </template>
 ```
@@ -166,11 +168,11 @@ Let's add an error message condition to our `new player` template:
 ```html
 <!-- leaderboard.html -->
 <template name="new_player">
-  {{#if error}}
+  {{#if error}\}
     <span id="error" style="color: red;">
-      {{error}} 
+      {{error}\} 
     </span>
-  {{/if}}
+  {{/if}\}
   <div class="new_player">
     <input id="new_player_name" type="text" />
     <input type="button" class="add" value="Add Player" />
@@ -178,11 +180,9 @@ Let's add an error message condition to our `new player` template:
 </template>
 ```
 
-* For `{{#if error}}` and `{{error}}` to work, we need a matching `Template.new_player.error` to
+* For {{#if error}\} and {{error}\} to work, we need a matching `Template.new_player.error` to
 return either `undefined` or the actual error message.
-* For template logic involving `{{error}}` to be reactive and automatically
-update, it needs to be backed by one of the data sources listed above in the
-Reactivity section.
+* For template logic involving {{error}\} to be reactive and automatically update, it needs to be backed by one of the data sources listed above in the Reactivity section.
 
 If that didn't make sense, it will when I post the code.
 
@@ -206,7 +206,7 @@ Object { }
 
 That's pretty much it, but here's the [Session API doc](http://docs.meteor.com/#session).
 
-Let's address the aforementioned `{error}` issue and expose a matching
+Let's address the aforementioned {{error}\} issue and expose a matching
 Template variable:
 
 ```javascript
@@ -216,9 +216,7 @@ Template.new_player.error = function () {
 };
 ```
 
-`{error}` in the template html expects an `error()` function and we'll
-just return the Session variable. If it's `undefined`, the `{#if error}`
-check fails.
+{{error}\} in the template html expects an `error()` function and we'll just return the Session variable. If it's `undefined`, the {{#if error}\} check fails.
 
 ## Using a Validation object
 
